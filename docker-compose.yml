@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  web:
+    image: api_megaflix
+    container_name: api_megaflix_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '${PORT}:${PORT}'
